@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head"><div><p class="eyebrow">MONEY IN</p><h1>Income</h1></div></div>
+<div class="grid2">
+<div class="panel"><h3>Add Income</h3><form method="post">
+<label>Source</label><input name="source" placeholder="Salary, freelance..." required>
+<label>Amount (₹)</label><input type="number" step="0.01" min="0.01" name="amount" required>
+<button class="btn">Add Income</button></form></div>
+<div class="panel"><h3>Income History</h3>
+{% for x in records %}<div class="row"><span>{{ x.source }}<small>{{ x.date.strftime('%d %b %Y') }}</small></span><b>₹{{ "%.2f"|format(x.amount) }}</b></div>{% else %}<p>No income records yet.</p>{% endfor %}
+</div></div>
+{% endblock %}

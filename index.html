@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">AI-POWERED PERSONAL FINANCE</p>
+    <h1>Understand your money.<br><span>Plan your future.</span></h1>
+    <p class="lead">Track income and expenses, create budgets, monitor savings and receive personalized financial insights.</p>
+    <div class="actions"><a class="btn" href="{{ url_for('register') }}">Get Started</a><a class="btn secondary" href="{{ url_for('login') }}">Login</a></div>
+  </div>
+  <div class="hero-card">
+    <div class="mini-label">MONTHLY OVERVIEW</div>
+    <div class="fake-number">₹48,500</div>
+    <div class="progress"><i style="width:72%"></i></div>
+    <p>72% of budget tracked</p>
+    <div class="mini-grid"><b>Income<br><strong>₹60,000</strong></b><b>Saved<br><strong>₹11,500</strong></b></div>
+  </div>
+</section>
+<section class="features">
+  <div><b>💰 Track</b><p>Record income and expenses.</p></div>
+  <div><b>📊 Analyze</b><p>See category-wise spending.</p></div>
+  <div><b>🤖 AI Advisor</b><p>Get personalized recommendations.</p></div>
+</section>
+{% endblock %}

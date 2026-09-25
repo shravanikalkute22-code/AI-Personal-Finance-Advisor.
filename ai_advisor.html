@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head"><div><p class="eyebrow">GENAI FINANCIAL INSIGHTS</p><h1>AI Financial Advisor 🤖</h1><p>Recommendations are generated from your recorded data.</p></div></div>
+<div class="cards">
+<div class="card"><span>Income</span><strong>₹{{ "%.2f"|format(total_income) }}</strong></div>
+<div class="card"><span>Expenses</span><strong>₹{{ "%.2f"|format(total_expense) }}</strong></div>
+<div class="card"><span>Savings</span><strong>₹{{ "%.2f"|format(savings) }}</strong></div>
+<div class="card"><span>Savings Rate</span><strong>{{ "%.1f"|format(rate) }}%</strong></div>
+</div>
+<div class="panel advisor"><h2>Personalized Recommendations</h2>
+{% for r in recommendations %}<div class="recommendation"><span>✦</span><p>{{ r }}</p></div>{% endfor %}
+<div class="notice">Educational demo only. Financial recommendations are general guidance, not professional financial advice.</div>
+</div>
+{% endblock %}
